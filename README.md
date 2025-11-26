@@ -1,3 +1,23 @@
+# Box-Office-Analysis
+Box-Office-Analysis is an R project that analyzes box office numbers for the Star Wars movies included in the dataset. The repository contains an R script that creates vectors of domestic and international earnings, builds matrices and data frames, computes worldwide totals, and reports summary results.
+
+## Skills demonstrated
+This project showcases  use of:
+- Creating and naming vectors
+- Building and labeling matrices
+- Adding computed rows to a matrix
+- Constructing data frames
+- Organizing results inside a list
+- Printing formatted output
+
+
+## How to run
+- Requirements: R (no additional packages required for the basic script).
+- From an R console:
+  - source("box_office_analysis.R")
+- From the command line:
+  - Rscript box_office_analysis.R
+
 ## Dataset
 The analysis uses the following (sample) data (values are in millions):
 
@@ -8,6 +28,7 @@ The analysis uses the following (sample) data (values are in millions):
   - Star Wars Episode IV
   - Star Wars Episode V
   - Star Wars Episode VI
+
 - Domestic earnings (millions): 460, 290, 310, 340, 410, 380  
 - International earnings (millions): 550, 610, 620, 500, 450, 470
 
@@ -41,14 +62,6 @@ movie_data <- data.frame(
 highest_movie <- movie_data$Movie[which.max(movie_data$Worldwide)]
 total_revenue <- sum(movie_data$Worldwide)
 
-# Put results in a list
-results <- list(
-    Matrix = box_office_worldwide,
-    DataFrame = movie_data,
-    HighestGrossing = highest_movie,
-    TotalRevenue = total_revenue
-)
-
 # Print results
 print("=== BOX OFFICE MATRIX (in millions)===")
 print(box_office_worldwide)
@@ -63,6 +76,7 @@ cat("Total revenue (all movies in millions):", total_revenue, "\n")
 Note: values are in millions.
 
 === BOX OFFICE MATRIX (in millions) ===
+
 ```
                           Star Wars Episode I Star Wars Episode II Star Wars Episode III (The best one) Star Wars Episode IV Star Wars Episode V Star Wars Episode VI
 Domestic                                460                   290                                  310                 340                 410                 380
@@ -71,6 +85,7 @@ Worldwide                              1010                   900               
 ```
 
 === DATA FRAME (in millions) ===
+
 ```
                                  Movie Domestic International Worldwide
 1                 Star Wars Episode I      460           550      1010
@@ -84,10 +99,3 @@ Worldwide                              1010                   900               
 Summary:
 - Highest grossing movie: Star Wars Episode I
 - Total revenue (all movies, in millions): 5390
-
-## How to run
-- Requirements: R (no additional packages required for the basic script).
-- From an R console:
-  - source("box_office_analysis.R")
-- From the command line:
-  - Rscript box_office_analysis.R
